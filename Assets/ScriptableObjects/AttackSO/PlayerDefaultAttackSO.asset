@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerDefaultAttackSO
   m_EditorClassIdentifier: 
   _Size: 1
-  _Delay: 0.3
+  _Delay: 0.7
   _Power: 2
-  _Speed: 10
+  _Speed: 8
   _Target:
     serializedVersion: 2
     m_Bits: 0
