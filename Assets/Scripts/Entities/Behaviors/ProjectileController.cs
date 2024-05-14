@@ -1,0 +1,95 @@
+﻿using System;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+
+public class ProjectileController : MonoBehaviour
+{
+    [SerializeField] private LayerMask levelCollisionLayer;
+
+    private bool isReady;
+
+    private Rigidbody2D rigidbody;
+    private SpriteRenderer spriteRenderer;
+    private TrailRenderer trailRenderer;
+
+    private RangedAttackSO attackData;
+    private float currentDuration;
+    private Vector2 direction;
+
+    private bool fxOnDestroy = true;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        rigidbody = GetComponent<Rigidbody2D>();
+        trailRenderer = GetComponent<TrailRenderer>();
+    }
+
+    private void Update()
+    {
+        if (!isReady)
+        {
+            return;
+        }
+
+        currentDuration += Time.deltaTime;
+
+        if(currentDuration > attackData._Duration)
+        {
+            DestroyProjectile(transform.position, false);
+        }
+
+        rigidbody.velocity = direction * attackData._Speed;
+    }
+
+
+    public void InitializeAttack(Vector2 direction, RangedAttackSO attackData)
+    {
+        this.attackData = attackData;
+        this.direction = direction;
+
+        UpdateProjectileSprite();
+        trailRenderer.Clear();
+        currentDuration = 0;
+        spriteRenderer.color = attackData._ProjectileColor;
+
+        transform.right = this.direction;
+
+        isReady = true;
+    }
+
+
+    private void DestroyProjectile(Vector3 position, bool createFx)
+    {
+        if (createFx)
+        {
+
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    private void UpdateProjectileSprite()
+    {
+        transform.localScale = Vector3.one * attackData._Size;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(isLayerMatched(levelCollisionLayer.value, collision.gameObject.layer))
+        {
+            Vector2 destroyPosition = collision.ClosestPoint(transform.position) - direction * 0.2f;
+
+            DestroyProjectile(destroyPosition, fxOnDestroy);
+        }
+        else if (isLayerMatched(attackData._Target.value, collision.gameObject.layer))
+        {
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
+        }
+    }
+
+    private bool isLayerMatched(int value, int layer)
+    {
+        return value == (value | 1 << layer);
+    }
+}
