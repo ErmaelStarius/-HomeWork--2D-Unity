@@ -18,6 +18,11 @@ public class CharacterStatusHandler : MonoBehaviour
         UpdateCharacterStatus();
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void UpdateCharacterStatus()
     {
         AttackSO attackSO = null;

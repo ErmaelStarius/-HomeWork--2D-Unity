@@ -25,7 +25,7 @@ public class ObjectPool : MonoBehaviour
 
             for(int i = 0; i < pool.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
+                GameObject obj = Instantiate(pool.prefab, transform);
 
                 obj.SetActive(false);
                 queue.Enqueue(obj);
@@ -44,6 +44,8 @@ public class ObjectPool : MonoBehaviour
 
         GameObject obj = PoolDictionary[tag].Dequeue();
         PoolDictionary[tag].Enqueue(obj);
+
+        obj.SetActive(true);
 
         return obj;
 

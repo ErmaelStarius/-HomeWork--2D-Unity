@@ -11,12 +11,12 @@ public class TopDownShooting : MonoBehaviour
 
     public GameObject TestPrefab;
 
-    private ObjectPool pool;
+
 
     private void Awake()
     {
         controller = GetComponent<TopDownController>();
-        pool = GameObject.FindObjectOfType<ObjectPool>();
+
     }
 
     private void Start()
@@ -59,13 +59,11 @@ public class TopDownShooting : MonoBehaviour
 
     private void CreatProjectile(RangedAttackSO rangedAttackSO, float angle)
     {
-       //GameObject obj = pool.SpawnFromPool(rangedAttackSO._BulletNameTag);
-        GameObject obj = Instantiate(TestPrefab);
+        GameObject obj = GameManager.Instance.ObjectPool.SpawnFromPool(rangedAttackSO._BulletNameTag);
+        
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.InitializeAttack(rotateVector2(aimDirection,angle), rangedAttackSO);
-
-        // Instantiate(TestPrefab, projectileSpawnPosition.position, Quaternion.identity);
     }
 
     private static Vector2 rotateVector2(Vector2 v, float angle)
