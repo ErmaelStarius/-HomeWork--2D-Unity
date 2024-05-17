@@ -9,6 +9,15 @@ public class CharacterStatusHandler : MonoBehaviour
 
     [SerializeField] private CharacterStatus baseStatus;
 
+    public CharacterStatus BaseStatus
+    {
+        get { return baseStatus; }
+        set 
+        { 
+            baseStatus = value;
+            UpdateCharacterStatus();
+        }
+    }
     public CharacterStatus _CurrentStatus { get; private set; }
 
     public List<CharacterStatus> _StatusModifiers = new List<CharacterStatus>();
@@ -18,13 +27,13 @@ public class CharacterStatusHandler : MonoBehaviour
         UpdateCharacterStatus();
     }
 
-    private void Start()
+    public void UpdateCharacterStatus()
     {
-        
-    }
-
-    private void UpdateCharacterStatus()
-    {
+        if (baseStatus == null)
+        {
+            Debug.LogError("BaseStatus is null.");
+            return;
+        }
         AttackSO attackSO = null;
 
         if(baseStatus.attackSO != null)
@@ -33,10 +42,19 @@ public class CharacterStatusHandler : MonoBehaviour
         }
 
         // [현재상태] 기본 능력치만 적용이 된다.
-        _CurrentStatus = new CharacterStatus { attackSO = attackSO };
+        _CurrentStatus = new CharacterStatus 
+        {
 
-        _CurrentStatus.statusChangeType = baseStatus.statusChangeType;
-        _CurrentStatus.maxHealth = baseStatus.maxHealth;
-        _CurrentStatus.speed = baseStatus.speed;
+            //플레이어 정보
+            attackSO = attackSO,
+            statusChangeType = baseStatus.statusChangeType,
+            maxHealth = baseStatus.maxHealth,
+            speed = baseStatus.speed,
+            gold = baseStatus.gold,
+            attackPower = baseStatus.attackPower
+
+        };
+
+        
     }
 }
