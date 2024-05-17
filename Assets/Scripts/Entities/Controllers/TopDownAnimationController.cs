@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterAnimationController : AnimationController
+public class TopDownAnimationController : AnimationController
 {
     private static readonly int isWalking = Animator.StringToHash("isWalking");
     private static readonly int isHit = Animator.StringToHash("isHit");
