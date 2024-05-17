@@ -38,9 +38,4 @@ public class PlayerInputController : TopDownController
     {
         IsAttacking = value.isPressed;
     }
-
-    public void OnTalk(InputValue value)
-    {
-        CallTalkEvent();
-    }
 }
