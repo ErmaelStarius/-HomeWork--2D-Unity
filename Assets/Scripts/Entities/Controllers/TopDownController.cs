@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class TopDownController : MonoBehaviour
 {
-
     // Action 이 들어가는 함수는 void 만 반환해야 함
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
     public event Action<AttackSO> OnAttackEvent;
-
+    public event Action OnTalkEvent;
 
     protected bool IsAttacking {  get; set; }
 
@@ -61,4 +60,10 @@ public class TopDownController : MonoBehaviour
     {
         OnAttackEvent?.Invoke(attackSO);
     }
+
+    public void CallTalkEvent()
+    {
+        OnTalkEvent?.Invoke();
+    }
+
 }
