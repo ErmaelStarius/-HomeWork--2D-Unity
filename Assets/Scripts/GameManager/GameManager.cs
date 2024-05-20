@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] private string playerTag;
 
-    public ObjectPool ObjectPool { get; private set; }
-    public Transform Player {  get; private set; }
+    public ObjectPool objectPool { get; private set; }
+    public Transform player {  get; private set; }
 
     private void Awake()
     {
@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
 
-        Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        player = GameObject.FindGameObjectWithTag(playerTag).transform;
 
-        ObjectPool = GetComponent<ObjectPool>();
+        objectPool = GetComponent<ObjectPool>();
 
 
     }

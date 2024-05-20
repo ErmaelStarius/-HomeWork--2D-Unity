@@ -3,21 +3,21 @@ using UnityEngine.UIElements;
 
 public class TopDownAimRotation : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _WeaponRenderer;
-    [SerializeField] private Transform _WeaponPivot;
+    [SerializeField] private SpriteRenderer weaponRenderer;
+    [SerializeField] private Transform weaponPivot;
 
-    [SerializeField] private SpriteRenderer _CharacterRenderer;
+    [SerializeField] private SpriteRenderer characterRenderer;
 
-    private TopDownController _Controller;
+    private TopDownController controller;
 
     private void Awake()
     {
-       _Controller = GetComponent<TopDownController>();
+       controller = GetComponent<TopDownController>();
     }
 
     private void Start()
     {
-        _Controller.OnLookEvent += OnAim;
+        controller.OnLookEvent += OnAim;
     }
 
     private void OnAim(Vector2 direction)
@@ -29,8 +29,8 @@ public class TopDownAimRotation : MonoBehaviour
     {
         float rotZ = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
 
-        _CharacterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+        characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
 
-        _WeaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
+        weaponPivot.rotation = Quaternion.Euler(0f, 0f, rotZ);
     }
 }
