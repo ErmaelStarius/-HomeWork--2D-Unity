@@ -88,6 +88,9 @@ public class StageManager : MonoBehaviour
 
         // 상점 입구 활성화
         entranceTile.gameObject.SetActive(false);
+
+        // 클리어에 따른 남은 몬스터 비활성화
+        GameManager.Instance.monsterDestroy();
     }
 
     public void StageFail()
