@@ -3584,8 +3584,8 @@ MonoBehaviour:
     prefab: {fileID: 570134522418986808, guid: 8ac8604f6a0a9ab4085198ca0c962aa0, type: 3}
     size: 10
   - tag: Slime
-    prefab: {fileID: 2150479609330921537, guid: 3675e1797e3ae514194aca7c4e29d066, type: 3}
-    size: 30
+    prefab: {fileID: 7175061695948887114, guid: d2c8ac2d3ae0a974d99e6d6e9dc652f3, type: 3}
+    size: 50
 --- !u!114 &405408922
 MonoBehaviour:
   m_ObjectHideFlags: 0
