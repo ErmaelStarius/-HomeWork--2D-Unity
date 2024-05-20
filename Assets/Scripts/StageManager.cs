@@ -106,10 +106,10 @@ public class StageManager : MonoBehaviour
             // 스포너 위치 랜덤으로 정함
             int result = Random.Range(0, 3);
             // 해당 몬스터 태그명
-            //GameObject obj = GameManager.Instance.objectPool.SpawnFromPool("태그명");
+            GameObject obj = GameManager.Instance.objectPool.SpawnFromPool("Slime");
 
             // 몬스터 위치를 랜덤 3가지의 몬스터 스포너 위치로 이동
-            //obj.transform.position = spawnPos[result].transform.position;
+            obj.transform.position = spawnPos[result].transform.position;
             yield return new WaitForSeconds(1.0f);
         }
     }
