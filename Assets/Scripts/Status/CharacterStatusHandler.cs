@@ -4,27 +4,35 @@ using UnityEngine.TextCore.Text;
 
 public class CharacterStatusHandler : MonoBehaviour
 {
-    // ±âº» ½ºÅ×ÀÌÅÍ½º¿Í Ãß°¡ ½ºÅ×ÀÌÅÍ½º¸¦ °è»êÇØ¼­ ÃÖÁ¾ ½ºÅ×ÀÌÅÍ½º¸¦ °è»êÇÏ´Â ·ÎÁ÷
-    // Áö±ÝÀº ±âº» ½ºÅ×ÀÌÅÍ½º¸¸ °è»ê.
+    // ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 
     [SerializeField] private CharacterStatus baseStatus;
+
+    public CharacterStatus currentStatus { get; private set; }
+
+    public List<CharacterStatus> statusModifiers = new List<CharacterStatus>();
 
     public CharacterStatus BaseStatus
     {
         get { return baseStatus; }
-        set 
-        { 
+        set
+        {
             baseStatus = value;
             UpdateCharacterStatus();
         }
     }
-    public CharacterStatus _CurrentStatus { get; private set; }
-
-    public List<CharacterStatus> _StatusModifiers = new List<CharacterStatus>();
-
     private void Awake()
     {
-        UpdateCharacterStatus();
+        if (baseStatus != null)
+        {
+            UpdateCharacterStatus();
+        }
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void UpdateCharacterStatus()
@@ -41,20 +49,16 @@ public class CharacterStatusHandler : MonoBehaviour
             attackSO = Instantiate(baseStatus.attackSO);
         }
 
-        // [ÇöÀç»óÅÂ] ±âº» ´É·ÂÄ¡¸¸ Àû¿ëÀÌ µÈ´Ù.
-        _CurrentStatus = new CharacterStatus 
+        // [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] ï¿½âº» ï¿½É·ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
+        currentStatus = new CharacterStatus
         {
-
-            //ÇÃ·¹ÀÌ¾î Á¤º¸
             attackSO = attackSO,
             statusChangeType = baseStatus.statusChangeType,
             maxHealth = baseStatus.maxHealth,
-            speed = baseStatus.speed,
-            gold = baseStatus.gold,
-            attackPower = baseStatus.attackPower
-
+            speed = baseStatus.speed, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Çµï¿½
+            gold = baseStatus.gold, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½
+            attackPower = baseStatus.attackPower, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½
+            equippedWeapon = baseStatus.equippedWeapon // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         };
-
-        
     }
 }

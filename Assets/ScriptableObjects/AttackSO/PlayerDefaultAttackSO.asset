@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061d7510437c3dc43a884ed9113b2bbd, type: 3}
   m_Name: PlayerDefaultAttackSO
   m_EditorClassIdentifier: 
-  _Size: 1
-  _Delay: 0.7
-  _Power: 2
-  _Speed: 8
-  _Target:
+  size: 1
+  delay: 0.7
+  power: 2
+  speed: 8
+  target:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   isKnockBack: 1
-  _KnockBackPower: 5
-  _KnockBackTime: 0.1
-  _BulletNameTag: 
-  _Duration: 5
-  _Spread: 4
-  _NumberOfProjectilesPerShot: 1
-  _MultipleProjectilesAngle: 7
-  _ProjectileColor: {r: 1, g: 1, b: 1, a: 1}
+  knockBackPower: 5
+  knockBackTime: 0.1
+  bulletNameTag: Weapon
+  duration: 5
+  spread: 4
+  numberOfProjectilesPerShot: 1
+  multipleProjectilesAngle: 7
+  projectileColor: {r: 1, g: 1, b: 1, a: 1}

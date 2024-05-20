@@ -11,12 +11,12 @@ public class TopDownShooting : MonoBehaviour
 
     public GameObject TestPrefab;
 
-    private ObjectPool pool;
+
 
     private void Awake()
     {
         controller = GetComponent<TopDownController>();
-        pool = GameObject.FindObjectOfType<ObjectPool>();
+
     }
 
     private void Start()
@@ -40,16 +40,16 @@ public class TopDownShooting : MonoBehaviour
             return;
         }
 
-        float projectilesAngleSpace = rangedAttackSO._MultipleProjectilesAngle;
-        int numberOfProjectilesPerShot = rangedAttackSO._NumberOfProjectilesPerShot;
+        float projectilesAngleSpace = rangedAttackSO.multipleProjectilesAngle;
+        int numberOfProjectilesPerShot = rangedAttackSO.numberOfProjectilesPerShot;
 
-        float minAngle = -(numberOfProjectilesPerShot / 2f) * projectilesAngleSpace + 0.5f * rangedAttackSO._MultipleProjectilesAngle;
+        float minAngle = -(numberOfProjectilesPerShot / 2f) * projectilesAngleSpace + 0.5f * rangedAttackSO.multipleProjectilesAngle;
 
         for(int i = 0; i < numberOfProjectilesPerShot; i++)
         {
             float angle = minAngle + i * projectilesAngleSpace;
 
-            float randomSpread = Random.Range(-rangedAttackSO._Spread, rangedAttackSO._Spread);
+            float randomSpread = Random.Range(-rangedAttackSO.spread, rangedAttackSO.spread);
 
             angle += randomSpread;
 
@@ -59,13 +59,11 @@ public class TopDownShooting : MonoBehaviour
 
     private void CreatProjectile(RangedAttackSO rangedAttackSO, float angle)
     {
-       //GameObject obj = pool.SpawnFromPool(rangedAttackSO._BulletNameTag);
-        GameObject obj = Instantiate(TestPrefab);
+        GameObject obj = GameManager.Instance.objectPool.SpawnFromPool(rangedAttackSO.bulletNameTag);
+        
         obj.transform.position = projectileSpawnPosition.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
         attackController.InitializeAttack(rotateVector2(aimDirection,angle), rangedAttackSO);
-
-        // Instantiate(TestPrefab, projectileSpawnPosition.position, Quaternion.identity);
     }
 
     private static Vector2 rotateVector2(Vector2 v, float angle)

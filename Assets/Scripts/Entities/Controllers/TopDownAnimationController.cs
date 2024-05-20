@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class CharacterAnimationController : AnimationController
+public class TopDownAnimationController : AnimationController
 {
     private static readonly int isWalking = Animator.StringToHash("isWalking");
     private static readonly int isHit = Animator.StringToHash("isHit");
-    private static readonly int Attack = Animator.StringToHash("attack");
+    private static readonly int isAttack = Animator.StringToHash("attack");
 
     private readonly float magnituteThreshold = 0.5f;
 
@@ -26,7 +26,7 @@ public class CharacterAnimationController : AnimationController
 
     private void Attacking(AttackSO sO)
     {
-        animator.SetTrigger(Attack);
+        animator.SetTrigger(isAttack);
     }
 
     private void Hit()

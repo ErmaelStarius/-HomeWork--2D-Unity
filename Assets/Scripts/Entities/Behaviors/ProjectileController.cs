@@ -34,12 +34,12 @@ public class ProjectileController : MonoBehaviour
 
         currentDuration += Time.deltaTime;
 
-        if(currentDuration > attackData._Duration)
+        if(currentDuration > attackData.duration)
         {
             DestroyProjectile(transform.position, false);
         }
 
-        rigidbody.velocity = direction * attackData._Speed;
+        rigidbody.velocity = direction * attackData.speed;
     }
 
 
@@ -51,7 +51,7 @@ public class ProjectileController : MonoBehaviour
         UpdateProjectileSprite();
         trailRenderer.Clear();
         currentDuration = 0;
-        spriteRenderer.color = attackData._ProjectileColor;
+        spriteRenderer.color = attackData.projectileColor;
 
         transform.right = this.direction;
 
@@ -71,7 +71,7 @@ public class ProjectileController : MonoBehaviour
 
     private void UpdateProjectileSprite()
     {
-        transform.localScale = Vector3.one * attackData._Size;
+        transform.localScale = Vector3.one * attackData.size;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,7 +82,7 @@ public class ProjectileController : MonoBehaviour
 
             DestroyProjectile(destroyPosition, fxOnDestroy);
         }
-        else if (isLayerMatched(attackData._Target.value, collision.gameObject.layer))
+        else if (isLayerMatched(attackData.target.value, collision.gameObject.layer))
         {
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
