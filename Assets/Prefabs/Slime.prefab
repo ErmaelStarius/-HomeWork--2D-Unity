@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2918575336277355562}
   - component: {fileID: 8662898072386793854}
   - component: {fileID: 3769293381256684675}
-  - component: {fileID: 3085170389462622778}
+  - component: {fileID: 8686592869852784996}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -97,7 +97,7 @@ MonoBehaviour:
     attackPower: 0
     equippedWeapon: {fileID: 0}
   statusModifiers: []
---- !u!50 &3085170389462622778
+--- !u!50 &8686592869852784996
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
