@@ -8,7 +8,7 @@ public enum StatusChangeType
 }
 
 
-//  ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ó¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+//  µ¥ÀÌÅÍ¸¦ Æú´õÃ³·³ »ç¿ëÇÒ ¼ö ÀÖ°Ô ¸¸µé¾îÁÖ´Â ¼Ó¼º Á¦°ø
 [System.Serializable]
 
 public class CharacterStatus
@@ -18,7 +18,7 @@ public class CharacterStatus
     [Range(1, 100)] public int maxHealth;
     [Range(1f, 20f)] public float speed;
     public AttackSO attackSO;
-    public int gold; //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½
-    public float attackPower; //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½
-    public Weapon equippedWeapon; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public int gold; //ÇÃ·¹ÀÌ¾î °ñµå
+    public float attackPower; //ÇÃ·¹ÀÌ¾î °ø°Ý·Â
+    public Weapon equippedWeapon; //ÀåÂøµÈ ¹«±â Á¤º¸
 }

@@ -4,8 +4,8 @@ using UnityEngine.TextCore.Text;
 
 public class CharacterStatusHandler : MonoBehaviour
 {
-    // ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
+    // ±âº» ½ºÅ×ÀÌÅÍ½º¿Í Ãß°¡ ½ºÅ×ÀÌÅÍ½º¸¦ °è»êÇØ¼­ ÃÖÁ¾ ½ºÅ×ÀÌÅÍ½º¸¦ °è»êÇÏ´Â ·ÎÁ÷
+    // Áö±ÝÀº ±âº» ½ºÅ×ÀÌÅÍ½º¸¸ °è»ê.
 
     [SerializeField] private CharacterStatus baseStatus;
 
@@ -35,13 +35,14 @@ public class CharacterStatusHandler : MonoBehaviour
         
     }
 
-    public void UpdateCharacterStatus()
+    private void UpdateCharacterStatus()
     {
         if (baseStatus == null)
         {
             Debug.LogError("BaseStatus is null.");
             return;
         }
+
         AttackSO attackSO = null;
 
         if(baseStatus.attackSO != null)
@@ -49,16 +50,16 @@ public class CharacterStatusHandler : MonoBehaviour
             attackSO = Instantiate(baseStatus.attackSO);
         }
 
-        // [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] ï¿½âº» ï¿½É·ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
+        // [ÇöÀç»óÅÂ] ±âº» ´É·ÂÄ¡¸¸ Àû¿ëÀÌ µÈ´Ù.
         currentStatus = new CharacterStatus
         {
             attackSO = attackSO,
             statusChangeType = baseStatus.statusChangeType,
             maxHealth = baseStatus.maxHealth,
-            speed = baseStatus.speed, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Çµï¿½
-            gold = baseStatus.gold, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½
-            attackPower = baseStatus.attackPower, //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½
-            equippedWeapon = baseStatus.equippedWeapon // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            speed = baseStatus.speed, //ÇÃ·¹ÀÌ¾î ½ºÇÇµå
+            gold = baseStatus.gold, //ÇÃ·¹ÀÌ¾î °ñµå
+            attackPower = baseStatus.attackPower, //ÇÃ·¹ÀÌ¾î °ø°Ý·Â
+            equippedWeapon = baseStatus.equippedWeapon // ¹«±â Á¤º¸
         };
     }
 }

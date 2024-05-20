@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] private string playerTag;
+    [SerializeField] private string playerTag = "Player";
 
     public ObjectPool objectPool { get; private set; }
     public Transform player {  get; private set; }

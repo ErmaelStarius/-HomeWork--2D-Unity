@@ -3584,7 +3584,7 @@ MonoBehaviour:
     prefab: {fileID: 570134522418986808, guid: 8ac8604f6a0a9ab4085198ca0c962aa0, type: 3}
     size: 10
   - tag: Slime
-    prefab: {fileID: 391392073417665126, guid: 3675e1797e3ae514194aca7c4e29d066, type: 3}
+    prefab: {fileID: 2150479609330921537, guid: 3675e1797e3ae514194aca7c4e29d066, type: 3}
     size: 30
 --- !u!114 &405408922
 MonoBehaviour:
@@ -22149,6 +22149,7 @@ GameObject:
   - component: {fileID: 1811828737}
   - component: {fileID: 1811828735}
   - component: {fileID: 1811828739}
+  - component: {fileID: 1811828740}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -22434,6 +22435,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStatusHandler: {fileID: 1811828734}
+--- !u!114 &1811828740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811828724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bde9ee82a4fd24f9f75e50c0815274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!1 &1815245798
 GameObject:
   m_ObjectHideFlags: 0
