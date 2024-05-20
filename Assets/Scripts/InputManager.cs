@@ -5,14 +5,14 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
 
-    [SerializeField] private float _Speed;
+    [SerializeField] private float speed;
 
-    Rigidbody2D _Rigidbody;
+    Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        _Rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,6 +28,6 @@ public class InputManager : MonoBehaviour
         // [정규화] 모든 방향의 길이를 1로 만드는 과정
         direction = direction.normalized;
 
-        _Rigidbody.velocity = direction * _Speed;
+        rigidbody.velocity = direction * speed;
     }
 }

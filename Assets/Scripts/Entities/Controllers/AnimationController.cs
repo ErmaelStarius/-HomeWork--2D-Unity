@@ -10,9 +10,4 @@ public class AnimationController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<TopDownController>();
     }
-
-    private void Start()
-    {
-        
-    }
 }

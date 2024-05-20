@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public class TopDownEnemyController : TopDownController
 {
-    protected Transform ClosestTarget { get; private set; }
+    protected Transform closestTarget { get; private set; }
 
     protected override void Awake()
     {
@@ -13,7 +13,7 @@ public class TopDownEnemyController : TopDownController
 
     protected virtual void Start()
     {
-        ClosestTarget = GameManager.Instance.Player;
+        closestTarget = GameManager.Instance.player;
     }
 
     protected virtual void FixedUpdate()
@@ -23,11 +23,11 @@ public class TopDownEnemyController : TopDownController
 
     protected float DistanceToTarget()
     {
-        return Vector3.Distance(transform.position, ClosestTarget.position);
+        return Vector3.Distance(transform.position, closestTarget.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (ClosestTarget.position - transform.position).normalized;
+        return (closestTarget.position - transform.position).normalized;
     }
 }

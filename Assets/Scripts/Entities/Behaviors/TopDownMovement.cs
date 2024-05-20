@@ -41,7 +41,7 @@ public class TopDownMovement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction = direction * characterStatusHandler._CurrentStatus.speed;
+        direction = direction * characterStatusHandler.currentStatus.speed;
         movementRigidbody.velocity = direction;
     }
 

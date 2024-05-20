@@ -13,11 +13,11 @@ public class ObjectPool : MonoBehaviour
     }
 
     public List<Pool> pools = new List<Pool>();
-    public Dictionary<string, Queue<GameObject>> PoolDictionary;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
 
     private void Awake()
     {
-        PoolDictionary = new Dictionary<string, Queue<GameObject>>();
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach(var pool in pools)
         {
@@ -31,19 +31,19 @@ public class ObjectPool : MonoBehaviour
                 queue.Enqueue(obj);
             }
 
-            PoolDictionary.Add(pool.tag, queue);
+            poolDictionary.Add(pool.tag, queue);
         }
     }
 
     public GameObject SpawnFromPool(string tag)
     {
-        if (!PoolDictionary.ContainsKey(tag))
+        if (!poolDictionary.ContainsKey(tag))
         {
             return null;
         }
 
-        GameObject obj = PoolDictionary[tag].Dequeue();
-        PoolDictionary[tag].Enqueue(obj);
+        GameObject obj = poolDictionary[tag].Dequeue();
+        poolDictionary[tag].Enqueue(obj);
 
         obj.SetActive(true);
 
