@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 8524481582796842386}
   - component: {fileID: 9109556166721682348}
   - component: {fileID: 4989761741269144054}
+  - component: {fileID: 520619399528335872}
   m_Layer: 6
   m_Name: Slime_SKY
   m_TagString: Untagged
@@ -223,7 +224,7 @@ MonoBehaviour:
     statusChangeType: 2
     maxHealth: 3
     speed: 1
-    attackSO: {fileID: 11400000, guid: ea5f211f9556ace48891e48b8e3e723d, type: 2}
+    attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
     gold: 0
     attackPower: 0
     equippedWeapon: {fileID: 0}
@@ -288,3 +289,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &520619399528335872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4058242336410511223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bde9ee82a4fd24f9f75e50c0815274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1767438951892821102}
   - component: {fileID: 7265327754734465842}
   - component: {fileID: 6683074723682857760}
+  - component: {fileID: -3454805543687820790}
   m_Layer: 6
   m_Name: Slime_BLUE
   m_TagString: Untagged
@@ -117,7 +118,7 @@ MonoBehaviour:
     statusChangeType: 2
     maxHealth: 3
     speed: 1
-    attackSO: {fileID: 11400000, guid: ea5f211f9556ace48891e48b8e3e723d, type: 2}
+    attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
     gold: 0
     attackPower: 0
     equippedWeapon: {fileID: 0}
@@ -182,6 +183,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3454805543687820790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868643351124180024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bde9ee82a4fd24f9f75e50c0815274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!1 &8728135783445221173
 GameObject:
   m_ObjectHideFlags: 0
