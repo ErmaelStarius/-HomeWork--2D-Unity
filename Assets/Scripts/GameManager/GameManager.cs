@@ -21,12 +21,13 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag(playerTag).transform;
 
         objectPool = GetComponent<ObjectPool>();
+
+
     }
 
-    // 몬스터 삭제
-    public void monsterDestroy()
+    public void MonsterDestroy()
     {
-        for(int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }

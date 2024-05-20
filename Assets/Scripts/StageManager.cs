@@ -90,7 +90,7 @@ public class StageManager : MonoBehaviour
         entranceTile.gameObject.SetActive(false);
 
         // 클리어에 따른 남은 몬스터 비활성화
-        GameManager.Instance.monsterDestroy();
+        GameManager.Instance.MonsterDestroy();
     }
 
     public void StageFail()
