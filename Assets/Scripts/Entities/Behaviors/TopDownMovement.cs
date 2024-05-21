@@ -13,6 +13,10 @@ public class TopDownMovement : MonoBehaviour
 
     private Vector2 movementDirection = Vector2.zero;
 
+    // 넉백 구현
+    private Vector2 knockback = Vector2.zero;
+    private float knockbackDuration = 0.0f;
+
     // 내 컴포넌트 안에서 끝난다.
     private void Awake()
     {
@@ -37,11 +41,31 @@ public class TopDownMovement : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyMovement(movementDirection);
+
+        // 넉백 구현
+        if (knockbackDuration > 0.0f)
+        {
+            knockbackDuration -= Time.fixedDeltaTime;
+        }
+    }
+
+    // 넉백 구현
+    public void ApplyKnockback(Transform other, float power, float duration)
+    {
+        knockbackDuration = duration;
+        knockback = -(other.position - transform.position).normalized * power;
     }
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction = direction * characterStatusHandler._CurrentStatus.speed;
+        direction = direction * characterStatusHandler.currentStatus.speed;
+
+        // 넉백 구현
+        if (knockbackDuration > 0.0f)
+        {
+            direction += knockback;
+        }
+
         movementRigidbody.velocity = direction;
     }
 

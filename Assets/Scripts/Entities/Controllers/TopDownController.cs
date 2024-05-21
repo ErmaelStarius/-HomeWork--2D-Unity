@@ -17,11 +17,11 @@ public class TopDownController : MonoBehaviour
     private float timeSinceLastAttack = float.MaxValue;
 
 
-    protected CharacterStatusHandler _Status { get; private set; }
+    protected CharacterStatusHandler status { get; private set; }
 
     protected virtual void Awake()
     {
-        _Status = GetComponent<CharacterStatusHandler>();
+        status = GetComponent<CharacterStatusHandler>();
     }
 
     private void Update()
@@ -32,14 +32,26 @@ public class TopDownController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if(timeSinceLastAttack < _Status._CurrentStatus.attackSO._Delay)
+        if (status == null || status.currentStatus == null)
+        {
+            return;
+        }
+
+        Weapon equippedWeapon = status.currentStatus.equippedWeapon;  //¹«±â
+
+        if (equippedWeapon == null)
+        {
+            return;
+        }
+
+        if (timeSinceLastAttack < status.currentStatus.attackSO.delay)
         {
             timeSinceLastAttack += Time.deltaTime;
         }
-        else if (IsAttacking && timeSinceLastAttack >= _Status._CurrentStatus.attackSO._Delay)
+        else if (IsAttacking && timeSinceLastAttack >= status.currentStatus.attackSO.delay)
         {
             timeSinceLastAttack = 0f;
-            CallAttackEvent(_Status._CurrentStatus.attackSO);
+            CallAttackEvent(status.currentStatus.attackSO);
 
         }
     }

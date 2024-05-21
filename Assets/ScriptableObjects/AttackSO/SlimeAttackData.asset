@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e91251ab7ca236240826252d7413b1eb, type: 3}
   m_Name: SlimeAttackData
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSO
-  _Size: 1
-  _Delay: 0.15
-  _Power: 1
-  _Speed: 1
-  _Target:
+  m_EditorClassIdentifier: 
+  size: 1
+  delay: 0.15
+  power: 1
+  speed: 1
+  target:
     serializedVersion: 2
     m_Bits: 256
   isKnockBack: 0
-  _KnockBackPower: 0
-  _KnockBackTime: 0
+  knockBackPower: 0
+  knockBackTime: 0

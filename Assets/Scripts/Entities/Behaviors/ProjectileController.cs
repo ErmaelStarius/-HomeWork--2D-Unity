@@ -34,12 +34,12 @@ public class ProjectileController : MonoBehaviour
 
         currentDuration += Time.deltaTime;
 
-        if(currentDuration > attackData._Duration)
+        if(currentDuration > attackData.duration)
         {
             DestroyProjectile(transform.position, false);
         }
 
-        rigidbody.velocity = direction * attackData._Speed;
+        rigidbody.velocity = direction * attackData.speed;
     }
 
 
@@ -51,7 +51,7 @@ public class ProjectileController : MonoBehaviour
         UpdateProjectileSprite();
         trailRenderer.Clear();
         currentDuration = 0;
-        spriteRenderer.color = attackData._ProjectileColor;
+        spriteRenderer.color = attackData.projectileColor;
 
         transform.right = this.direction;
 
@@ -71,7 +71,7 @@ public class ProjectileController : MonoBehaviour
 
     private void UpdateProjectileSprite()
     {
-        transform.localScale = Vector3.one * attackData._Size;
+        transform.localScale = Vector3.one * attackData.size;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,8 +82,21 @@ public class ProjectileController : MonoBehaviour
 
             DestroyProjectile(destroyPosition, fxOnDestroy);
         }
-        else if (isLayerMatched(attackData._Target.value, collision.gameObject.layer))
+        else if (isLayerMatched(attackData.target.value, collision.gameObject.layer))
         {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                // 충돌한 오브젝트의 체력을 감소시킵니다.
+                bool isAttackApplied = healthSystem.ChangeHealth(-attackData.power);
+
+                // 넉백이 활성화된 경우, 최종적으로 넉백을 적용
+                if (isAttackApplied && attackData.isKnockBack)
+                {
+                    ApplyKnockback(collision);
+                }
+            }
+
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestroy);
         }
     }
@@ -91,5 +104,15 @@ public class ProjectileController : MonoBehaviour
     private bool isLayerMatched(int value, int layer)
     {
         return value == (value | 1 << layer);
+    }
+
+    // 넉백 적용 메소드
+    private void ApplyKnockback(Collider2D collision)
+    {
+        TopDownMovement movement = collision.GetComponent<TopDownMovement>();
+        if (movement != null)
+        {
+            movement.ApplyKnockback(transform, attackData.knockBackPower, attackData.knockBackTime);
+        }
     }
 }

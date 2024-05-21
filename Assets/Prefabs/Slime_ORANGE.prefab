@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 520913118349539719}
   - component: {fileID: 5874013857169299970}
   - component: {fileID: 6924632509617696145}
+  - component: {fileID: -1998202041932690426}
+  - component: {fileID: -6758234833433086346}
   m_Layer: 6
   m_Name: Slime_ORANGE
   m_TagString: Untagged
@@ -116,8 +118,11 @@ MonoBehaviour:
     statusChangeType: 2
     maxHealth: 3
     speed: 1
-    attackSO: {fileID: 11400000, guid: ea5f211f9556ace48891e48b8e3e723d, type: 2}
-  _StatusModifiers: []
+    attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
+    gold: 0
+    attackPower: 0
+    equippedWeapon: {fileID: 0}
+  statusModifiers: []
 --- !u!114 &520913118349539719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +162,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b0ab87fbbfead44a3e9fb15c3bea8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-1998202041932690426
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458446888353166011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa3849da7f9acc04083f2a8acedc36b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6758234833433086346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458446888353166011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bde9ee82a4fd24f9f75e50c0815274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!1 &3679733910643526228
 GameObject:
   m_ObjectHideFlags: 0
