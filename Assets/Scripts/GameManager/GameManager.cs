@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] private string playerTag = "Player";
+    [SerializeField] private GameObject gameFailObject;
 
     public ObjectPool objectPool { get; private set; }
     public Transform player {  get; private set; }
 
     private void Awake()
     {
+        Time.timeScale = 1.0f;
         if(Instance != null)
         {
             Destroy(gameObject);
@@ -23,6 +25,13 @@ public class GameManager : MonoBehaviour
         objectPool = GetComponent<ObjectPool>();
 
 
+    }
+
+    public void GameFail()
+    {
+        // 게임 시간을 0으로 변경
+        Time.timeScale = 0;
+        gameFailObject.SetActive(true);
     }
 
     public void MonsterDestroy()

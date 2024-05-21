@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class CharacterStatusHandler : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CharacterStatusHandler : MonoBehaviour
     // 지금은 기본 스테이터스만 계산.
 
     [SerializeField] private CharacterStatus baseStatus;
+    [SerializeField] private Text goldText;
 
     public CharacterStatus currentStatus { get; private set; }
 
@@ -30,9 +32,17 @@ public class CharacterStatusHandler : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Update()
     {
-        
+        StatusUpdate();
+    }
+
+    private void StatusUpdate()
+    {
+        if (goldText != null)
+        {
+            goldText.text = currentStatus.gold + "G";
+        }
     }
 
     private void UpdateCharacterStatus()
@@ -48,5 +58,6 @@ public class CharacterStatusHandler : MonoBehaviour
         currentStatus.statusChangeType = baseStatus.statusChangeType;
         currentStatus.maxHealth = baseStatus.maxHealth;
         currentStatus.speed = baseStatus.speed;
+        currentStatus.gold = baseStatus.gold;
     }
 }

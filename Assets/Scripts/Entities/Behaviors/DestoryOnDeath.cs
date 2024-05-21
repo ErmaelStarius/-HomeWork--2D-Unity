@@ -4,9 +4,14 @@ public class DestroyOnDeath : MonoBehaviour
 {
     private HealthSystem healthSystem;
     private Rigidbody2D rigidbody;
+    public bool playerCheck = false;
+    private CharacterStatusHandler player;
+    private CharacterStatusHandler enemy;
 
     private void Start()
     {
+        player = GameObject.Find("Player").GetComponent<CharacterStatusHandler>();
+        enemy = GetComponent<CharacterStatusHandler>();
         healthSystem = GetComponent<HealthSystem>();
         rigidbody = GetComponent<Rigidbody2D>();
         // 실제 실행 주체는 healthSystem임
@@ -30,6 +35,12 @@ public class DestroyOnDeath : MonoBehaviour
         foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
         {
             component.enabled = false;
+        }
+
+        // 적이라면
+        if (playerCheck == false)
+        {
+            player.currentStatus.gold += enemy.currentStatus.gold;
         }
 
         // 2초뒤에 파괴

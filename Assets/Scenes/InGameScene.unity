@@ -2064,6 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  gameFailObject: {fileID: 578991529}
 --- !u!1 &411428027
 GameObject:
   m_ObjectHideFlags: 0
@@ -15039,6 +15040,8 @@ MonoBehaviour:
     maxHealth: 10
     speed: 3
     attackSO: {fileID: 11400000, guid: d4c466801a4ed6b49a886ce24917abc7, type: 2}
+    gold: 1000
+  goldText: {fileID: 766385090}
   statusModifiers: []
 --- !u!114 &1811828735
 MonoBehaviour:
@@ -15125,6 +15128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  healthImg: {fileID: 417595730}
+  playerCheck: 1
 --- !u!1 &1818061220
 GameObject:
   m_ObjectHideFlags: 0

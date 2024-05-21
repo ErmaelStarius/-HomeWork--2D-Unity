@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7265327754734465842}
   - component: {fileID: 6683074723682857760}
   - component: {fileID: -3454805543687820790}
+  - component: {fileID: -1699892388371039487}
   m_Layer: 6
   m_Name: Slime_BLUE
   m_TagString: Untagged
@@ -74,7 +75,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
 --- !u!50 &6131454399772218213
 Rigidbody2D:
   serializedVersion: 4
@@ -119,9 +120,8 @@ MonoBehaviour:
     maxHealth: 3
     speed: 1
     attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
-    gold: 0
-    attackPower: 0
-    equippedWeapon: {fileID: 0}
+    gold: 5
+  goldText: {fileID: 0}
   statusModifiers: []
 --- !u!114 &6340884037741694734
 MonoBehaviour:
@@ -196,6 +196,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  healthImg: {fileID: 0}
+  playerCheck: 0
+--- !u!114 &-1699892388371039487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868643351124180024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665b73628a5b9354c97ed1f88b243ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCheck: 0
 --- !u!1 &8728135783445221173
 GameObject:
   m_ObjectHideFlags: 0

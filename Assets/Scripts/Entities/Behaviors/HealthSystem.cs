@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private float healthChangeDelay = .5f;
+    [SerializeField] private Image healthImg;
+    public bool playerCheck = false;
 
     private CharacterStatusHandler statsHandler;
     private float timeSinceLastChange = float.MaxValue;
@@ -59,8 +62,17 @@ public class HealthSystem : MonoBehaviour
         // CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         // CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth; 와 같아요!
 
+        if (playerCheck)
+        {
+            healthImg.fillAmount = CurrentHealth / statsHandler.currentStatus.maxHealth;
+        }
+
         if (CurrentHealth <= 0f)
         {
+            if (playerCheck)
+            {
+                GameManager.Instance.GameFail();
+            }
             CallDeath();
             return true;
         }
