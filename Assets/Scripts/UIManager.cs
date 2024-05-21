@@ -15,9 +15,9 @@ public class UIManager : MonoBehaviour
     public CharacterStatusHandler characterStatusHandler;
     private int currency; // 화폐 시스템을 위한 변수
 
-    private void OnEnable()
+    private void Start()
     {
-        UpdateUpgradeTexts(); ;
+        UpdateUpgradeTexts();
     }
 
     private void UpdateUpgradeTexts()
@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         projectileSpeedText.text = "투사체 속도: " + characterStatusHandler.currentStatus.attackSO.speed.ToString();
         if (characterStatusHandler.currentStatus.attackSO != null)
         {
-            projectileCountText.text = "투사체 개수: " + characterStatusHandler.currentStatus.rangedAttackSO.numberOfProjectilesPerShot.ToString();
+            projectileCountText.text = "투사체 개수: " + characterStatusHandler.currentStatus.attackSO.numberOfProjectilesPerShot.ToString();
         }
         shopGoldText.text = characterStatusHandler.currentStatus.gold + "G";
     }
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
 
     public void UpgradeProjectileCount()
     {
-        var rangedAttackSO = characterStatusHandler.currentStatus.rangedAttackSO;
+        var rangedAttackSO = characterStatusHandler.currentStatus.attackSO;
         if (rangedAttackSO != null && CanAffordUpgrade(500)) // 업그레이드 비용
         {
             rangedAttackSO.numberOfProjectilesPerShot += 1; // 투사체 개수 증가

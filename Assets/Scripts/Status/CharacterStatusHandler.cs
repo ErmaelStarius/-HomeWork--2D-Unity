@@ -47,7 +47,7 @@ public class CharacterStatusHandler : MonoBehaviour
 
     private void UpdateCharacterStatus()
     {
-        AttackSO attackSO = null;
+        RangedAttackSO attackSO = null;
         if (baseStatus.attackSO != null)
         {
             attackSO = Instantiate(baseStatus.attackSO);
@@ -59,6 +59,6 @@ public class CharacterStatusHandler : MonoBehaviour
         currentStatus.maxHealth = baseStatus.maxHealth;
         currentStatus.speed = baseStatus.speed;
         currentStatus.gold = baseStatus.gold;
-        currentStatus.rangedAttackSO = baseStatus.rangedAttackSO;
+        
     }
 }

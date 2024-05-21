@@ -25,9 +25,11 @@ public class ObjectPool : MonoBehaviour
         {
             Queue<GameObject> queue = new Queue<GameObject>();
 
-            GameObject folder = Instantiate(new GameObject(pool.tag), transform);
-            //folder.transform.SetParent(transform);
-            for(int i = 0; i < pool.size; i++)
+            //GameObject folder = Instantiate(new GameObject(pool.tag), transform);
+
+            GameObject folder = new GameObject(pool.tag);
+            folder.transform.SetParent(transform);
+            for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab, folder.transform);
 

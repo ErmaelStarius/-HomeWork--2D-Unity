@@ -119,7 +119,7 @@ MonoBehaviour:
     statusChangeType: 2
     maxHealth: 3
     speed: 1
-    attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
+    attackSO: {fileID: 11400000, guid: d1253ffa14f6105429b6da624dcec0d5, type: 2}
     gold: 5
   goldText: {fileID: 0}
   statusModifiers: []
