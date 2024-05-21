@@ -18,7 +18,4 @@ public class CharacterStatus
     [Range(1, 100)] public int maxHealth;
     [Range(1f, 20f)] public float speed;
     public AttackSO attackSO;
-    public int gold; //플레이어 골드
-    public float attackPower; //플레이어 공격력
-    public Weapon equippedWeapon; //장착된 무기 정보
 }

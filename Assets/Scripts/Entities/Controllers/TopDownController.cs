@@ -31,18 +31,6 @@ public class TopDownController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (status == null || status.currentStatus == null)
-        {
-            return;
-        }
-
-        Weapon equippedWeapon = status.currentStatus.equippedWeapon;  //¹«±â
-
-        if (equippedWeapon == null)
-        {
-            return;
-        }
-
         if (timeSinceLastAttack < status.currentStatus.attackSO.delay)
         {
             timeSinceLastAttack += Time.deltaTime;
