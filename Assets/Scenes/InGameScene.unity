@@ -2109,7 +2109,7 @@ GameObject:
   - component: {fileID: 417595731}
   - component: {fileID: 417595730}
   m_Layer: 5
-  m_Name: MaxHealth
+  m_Name: CurrentHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6243,7 +6243,7 @@ GameObject:
   - component: {fileID: 646647754}
   - component: {fileID: 646647753}
   m_Layer: 5
-  m_Name: CurrentHealth
+  m_Name: MaxHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
