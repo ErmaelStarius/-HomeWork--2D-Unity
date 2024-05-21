@@ -21,7 +21,7 @@ public class TopDownAnimationController : AnimationController
 
     private void Move(Vector2 vector)
     {
-        animator.SetBool(isWalking, vector.magnitude > magnituteThreshold);
+        //animator.SetBool(isWalking, vector.magnitude > magnituteThreshold);
     }
 
     private void Attacking(AttackSO sO)
