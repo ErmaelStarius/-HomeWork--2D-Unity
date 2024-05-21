@@ -14,7 +14,7 @@ public enum StatusChangeType
 public class CharacterStatus
 {
     public StatusChangeType statusChangeType;
-
+    public RangedAttackSO rangedAttackSO;
     [Range(1, 100)] public int maxHealth;
     [Range(1f, 20f)] public float speed;
     public AttackSO attackSO;

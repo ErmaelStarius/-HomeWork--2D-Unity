@@ -59,5 +59,6 @@ public class CharacterStatusHandler : MonoBehaviour
         currentStatus.maxHealth = baseStatus.maxHealth;
         currentStatus.speed = baseStatus.speed;
         currentStatus.gold = baseStatus.gold;
+        currentStatus.rangedAttackSO = baseStatus.rangedAttackSO;
     }
 }
