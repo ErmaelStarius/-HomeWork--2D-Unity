@@ -53,7 +53,7 @@ public class TopDownContactEnemyController : TopDownEnemyController
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject receiver = collision.gameObject;
 
@@ -71,9 +71,9 @@ public class TopDownContactEnemyController : TopDownEnemyController
         collidingMovement = receiver.GetComponent<TopDownMovement>();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!collision.CompareTag(targetTag))
+        if (!collision.gameObject.CompareTag(targetTag))
         {
             return;
         }
@@ -85,6 +85,7 @@ public class TopDownContactEnemyController : TopDownEnemyController
     {
         AttackSO attackSO = status.currentStatus.attackSO;
         bool hasBeenChanged = collidingTargetHealthSystem.ChangeHealth(-attackSO.power);
+        gameObject.SetActive(false);
         if (attackSO.isKnockBack && collidingMovement != null)
         {
             collidingMovement.ApplyKnockback(transform, attackSO.knockBackPower, attackSO.knockBackTime);

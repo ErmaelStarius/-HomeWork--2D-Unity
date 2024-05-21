@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2409752175551586751}
   - component: {fileID: -7159625051204303023}
   - component: {fileID: -5476456509090024146}
+  - component: {fileID: -5692900553684092418}
   m_Layer: 6
   m_Name: Slime_PURPLE
   m_TagString: Untagged
@@ -74,7 +75,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.45
 --- !u!50 &8500183629884003768
 Rigidbody2D:
   serializedVersion: 4
@@ -119,9 +120,8 @@ MonoBehaviour:
     maxHealth: 3
     speed: 1
     attackSO: {fileID: 11400000, guid: 5bb7cce533e93104c9d90f1247f22aa5, type: 2}
-    gold: 0
-    attackPower: 0
-    equippedWeapon: {fileID: 0}
+    gold: 5
+  goldText: {fileID: 0}
   statusModifiers: []
 --- !u!114 &2160526839727096804
 MonoBehaviour:
@@ -196,6 +196,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
+  healthImg: {fileID: 0}
+  playerCheck: 0
+--- !u!114 &-5692900553684092418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658139301619049851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665b73628a5b9354c97ed1f88b243ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCheck: 0
 --- !u!1 &9038269523373519243
 GameObject:
   m_ObjectHideFlags: 0

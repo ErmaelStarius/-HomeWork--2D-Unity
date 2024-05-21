@@ -49,13 +49,13 @@ public class StageManager : MonoBehaviour
             sec -= Time.deltaTime;
             if (sec < 0)
             {
+                if ( min <= 0)
+                {
+                    StageClear();
+                }
                 min -= 1;
                 sec = 59;
             }
-        }
-        else
-        {
-            StageClear();
         }
     }
 
@@ -92,6 +92,9 @@ public class StageManager : MonoBehaviour
 
         // 클리어에 따른 남은 몬스터 비활성화
         GameManager.Instance.MonsterDestroy();
+
+        // 스폰 시간을 단축시킴
+        spawneTime -= 0.05f;
     }
 
     public void StageFail()

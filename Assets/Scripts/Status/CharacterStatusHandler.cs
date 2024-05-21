@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class CharacterStatusHandler : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CharacterStatusHandler : MonoBehaviour
     // 지금은 기본 스테이터스만 계산.
 
     [SerializeField] private CharacterStatus baseStatus;
+    [SerializeField] private Text goldText;
 
     public CharacterStatus currentStatus { get; private set; }
 
@@ -30,36 +32,32 @@ public class CharacterStatusHandler : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Update()
     {
-        
+        StatusUpdate();
+    }
+
+    private void StatusUpdate()
+    {
+        if (goldText != null)
+        {
+            goldText.text = currentStatus.gold + "G";
+        }
     }
 
     private void UpdateCharacterStatus()
     {
-        if (baseStatus == null)
-        {
-            Debug.LogError("BaseStatus is null.");
-            return;
-        }
-
         AttackSO attackSO = null;
-
-        if(baseStatus.attackSO != null)
+        if (baseStatus.attackSO != null)
         {
             attackSO = Instantiate(baseStatus.attackSO);
         }
 
-        // [현재상태] 기본 능력치만 적용이 된다.
-        currentStatus = new CharacterStatus
-        {
-            attackSO = attackSO,
-            statusChangeType = baseStatus.statusChangeType,
-            maxHealth = baseStatus.maxHealth,
-            speed = baseStatus.speed, //플레이어 스피드
-            gold = baseStatus.gold, //플레이어 골드
-            attackPower = baseStatus.attackPower, //플레이어 공격력
-            equippedWeapon = baseStatus.equippedWeapon // 무기 정보
-        };
+        currentStatus = new CharacterStatus { attackSO = attackSO };
+        // TODO : 지금은 기본 능력치만 적용되지만, 앞으로는 능력치 강화 기능이 적용됨
+        currentStatus.statusChangeType = baseStatus.statusChangeType;
+        currentStatus.maxHealth = baseStatus.maxHealth;
+        currentStatus.speed = baseStatus.speed;
+        currentStatus.gold = baseStatus.gold;
     }
 }

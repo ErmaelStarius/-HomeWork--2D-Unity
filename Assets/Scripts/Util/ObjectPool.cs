@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.WSA;
 
@@ -23,8 +24,9 @@ public class ObjectPool : MonoBehaviour
         foreach(var pool in pools)
         {
             Queue<GameObject> queue = new Queue<GameObject>();
+
             GameObject folder = Instantiate(new GameObject(pool.tag), transform);
-            folder.SetActive(true);
+            //folder.transform.SetParent(transform);
             for(int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab, folder.transform);
@@ -46,7 +48,6 @@ public class ObjectPool : MonoBehaviour
 
         GameObject obj = poolDictionary[tag].Dequeue();
         poolDictionary[tag].Enqueue(obj);
-        //obj.transform.parent.gameObject.SetActive(true);
         obj.SetActive(true);
         return obj;
 
