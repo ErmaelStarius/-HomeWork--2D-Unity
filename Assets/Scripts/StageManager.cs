@@ -49,13 +49,13 @@ public class StageManager : MonoBehaviour
             sec -= Time.deltaTime;
             if (sec < 0)
             {
+                if ( min <= 0)
+                {
+                    StageClear();
+                }
                 min -= 1;
                 sec = 59;
             }
-        }
-        else
-        {
-            StageClear();
         }
     }
 
