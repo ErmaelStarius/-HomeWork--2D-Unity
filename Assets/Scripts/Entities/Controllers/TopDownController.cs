@@ -10,6 +10,7 @@ public class TopDownController : MonoBehaviour
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
     public event Action<AttackSO> OnAttackEvent;
+    public event Action OnTalkEvent;
 
 
     protected bool IsAttacking {  get; set; }
@@ -60,5 +61,10 @@ public class TopDownController : MonoBehaviour
     private void CallAttackEvent(AttackSO attackSO)
     {
         OnAttackEvent?.Invoke(attackSO);
+    }
+
+    private void CallTalkEvent()
+    {
+        OnTalkEvent?.Invoke();
     }
 }

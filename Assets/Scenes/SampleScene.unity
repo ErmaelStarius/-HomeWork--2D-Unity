@@ -280,7 +280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 13772996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fdbb1c44afd80a4889cf3a7beae6f35, type: 3}
+  m_Script: {fileID: 11500000, guid: 71df0e3dcc4a809418412d24ea818f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\uC0C1\uC778"
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 242997270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f87fb815522924c856c4e992694fc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 64cdb5950ed6da742b2a3972627dc450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &262241877
@@ -2744,7 +2744,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 541135441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8cbb9c86b196ed40920ebf103ae1d01, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fcfb071b24dbc1428643ba97b355a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stageTime: {fileID: 844566143}
@@ -15076,10 +15076,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1811828724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87902fe626f95a54885d71d1a31c2133, type: 3}
+  m_Script: {fileID: 11500000, guid: f6dfdf8243a164f41b588b9580226b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction: {fileID: 5570019507544391500}
 --- !u!58 &1811828738
 CircleCollider2D:
   m_ObjectHideFlags: 0
