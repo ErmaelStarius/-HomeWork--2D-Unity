@@ -417,9 +417,9 @@ RectTransform:
   - {fileID: 1659561811}
   m_Father: {fileID: 1848702691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &155089133
@@ -1118,9 +1118,9 @@ RectTransform:
   - {fileID: 6074696}
   m_Father: {fileID: 1848702691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -450}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &210179506
@@ -2030,8 +2030,26 @@ MonoBehaviour:
   - tag: Weapon
     prefab: {fileID: 570134522418986808, guid: 8ac8604f6a0a9ab4085198ca0c962aa0, type: 3}
     size: 10
-  - tag: Slime
+  - tag: Slime1
     prefab: {fileID: 7175061695948887114, guid: d2c8ac2d3ae0a974d99e6d6e9dc652f3, type: 3}
+    size: 50
+  - tag: Slime2
+    prefab: {fileID: 4868643351124180024, guid: 75b420aa059bf2248a679471617b281d, type: 3}
+    size: 50
+  - tag: Slime3
+    prefab: {fileID: 5077372698132198018, guid: 303b371cf3817134dbf7fc14a8c0c8d1, type: 3}
+    size: 50
+  - tag: Slime4
+    prefab: {fileID: 1458446888353166011, guid: 84f03b2a4cca36d4f91c5679808bd5c8, type: 3}
+    size: 50
+  - tag: Slime5
+    prefab: {fileID: 6658139301619049851, guid: 5efd089ccaaacde4696a0421bcc46556, type: 3}
+    size: 50
+  - tag: Slime6
+    prefab: {fileID: 4058242336410511223, guid: 55d100120ff72e347857c6553070e996, type: 3}
+    size: 50
+  - tag: Slime7
+    prefab: {fileID: 4360249423161901888, guid: b2f7fb00117ab1a4da612bf095839c3b, type: 3}
     size: 50
 --- !u!114 &405408922
 MonoBehaviour:
@@ -8038,7 +8056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1055502273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9405,9 +9423,9 @@ RectTransform:
   - {fileID: 1561601487}
   m_Father: {fileID: 1848702691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -300}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1375475313
@@ -10230,9 +10248,9 @@ RectTransform:
   - {fileID: 856012661}
   m_Father: {fileID: 1848702691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -600}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1481967429

@@ -27,9 +27,14 @@ public class GameManager : MonoBehaviour
 
     public void MonsterDestroy()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 1; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            GameObject parentObject = transform.GetChild(i).gameObject;
+            foreach (Transform child in parentObject.transform)
+            {
+                GameObject monster = child.gameObject;
+                monster.SetActive(false);
+            }
         }
     }
 }

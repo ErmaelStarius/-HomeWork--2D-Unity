@@ -16,6 +16,7 @@ public class StageManager : MonoBehaviour
     private int stageLevel = 0; // 스테이지 레벨
     private float sec; // 게임 시간(초)
     private float min; // 게임 시간(분)
+    private float spawneTime = 1.0f;
 
     void Update()
     {
@@ -75,7 +76,7 @@ public class StageManager : MonoBehaviour
 
         // 게임 시간을 감소
         sec = 30;
-        min = 1;
+        min = 0;
     }
 
     public void StageClear()
@@ -105,12 +106,14 @@ public class StageManager : MonoBehaviour
         {
             // 스포너 위치 랜덤으로 정함
             int result = Random.Range(0, 3);
+            int monsterRandom = Random.Range(1, 8);
+
             // 해당 몬스터 태그명
-            GameObject obj = GameManager.Instance.objectPool.SpawnFromPool("Slime");
+            GameObject obj = GameManager.Instance.objectPool.SpawnFromPool("Slime" + monsterRandom);
 
             // 몬스터 위치를 랜덤 3가지의 몬스터 스포너 위치로 이동
             obj.transform.position = spawnPos[result].transform.position;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(spawneTime);
         }
     }
 }
