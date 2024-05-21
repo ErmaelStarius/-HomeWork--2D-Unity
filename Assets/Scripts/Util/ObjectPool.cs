@@ -46,7 +46,6 @@ public class ObjectPool : MonoBehaviour
 
         GameObject obj = poolDictionary[tag].Dequeue();
         poolDictionary[tag].Enqueue(obj);
-        //obj.transform.parent.gameObject.SetActive(true);
         obj.SetActive(true);
         return obj;
 
