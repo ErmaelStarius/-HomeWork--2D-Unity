@@ -76,7 +76,7 @@ public class StageManager : MonoBehaviour
 
         // 게임 시간을 감소
         sec = 30;
-        min = 0;
+        min = 1;
     }
 
     public void StageClear()
