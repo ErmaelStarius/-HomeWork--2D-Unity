@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
     public void UpgradeAttackPower()
     {
         var attackSO = characterStatusHandler.currentStatus.attackSO;
-        if (CanAffordUpgrade(500)) // 업그레이드 비용
+        if (CanAffordUpgrade(1000)) // 업그레이드 비용
         {
             attackSO.power += 1; // 공격력 증가
             UpdateUpgradeTexts();
@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
     public void UpgradeAttackSpeed()
     {
         var attackSO = characterStatusHandler.currentStatus.attackSO;
-        if (CanAffordUpgrade(500)) // 업그레이드 비용
+        if (CanAffordUpgrade(200)) // 업그레이드 비용
         {
             attackSO.delay = Mathf.Max(0.1f, attackSO.delay - 0.1f); // 공격 속도 증가
             UpdateUpgradeTexts();
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
     public void UpgradeProjectileSpeed()
     {
         var attackSO = characterStatusHandler.currentStatus.attackSO;
-        if (CanAffordUpgrade(500)) // 업그레이드 비용
+        if (CanAffordUpgrade(200)) // 업그레이드 비용
         {
             attackSO.speed += 1; // 투사체 속도 증가
             UpdateUpgradeTexts();
@@ -117,7 +117,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpgradeHealthRecovery()
     {
-        if (CanAffordUpgrade(500)) // 업그레이드 비용
+        if (CanAffordUpgrade(100)) // 업그레이드 비용
         {
             characterStatusHandler.currentStatus.currentHealth += characterStatusHandler.currentStatus.healthHeal; // 체력 회복 증가
             UpdateUpgradeTexts();
@@ -129,9 +129,9 @@ public class UIManager : MonoBehaviour
     }
     public void UpgradeMaxHealth()
     {
-        if (CanAffordUpgrade(1000)) // 업그레이드 비용
+        if (CanAffordUpgrade(150)) // 업그레이드 비용
         {
-            characterStatusHandler.currentStatus.maxHealth += 10; // 최대 체력 증가
+            characterStatusHandler.currentStatus.maxHealth += 2; // 최대 체력 증가
             UpdateUpgradeTexts();
         }
         else

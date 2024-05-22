@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500G
+  m_Text: 200G
 --- !u!222 &6074698
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2334,7 +2334,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 + 10"
+  m_Text: "\uCD5C\uB300 \uCCB4\uB825 + 2"
 --- !u!222 &442354276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6488,7 +6488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD604\uC7AC \uCCB4\uB825 + 5"
+  m_Text: "\uD604\uC7AC \uCCB4\uB825 + 1"
 --- !u!222 &740424537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7355,7 +7355,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10000G
+  m_Text: 1000G
 --- !u!222 &966967227
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10472,7 +10472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3000G
+  m_Text: 150G
 --- !u!222 &1559631785
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10551,7 +10551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500G
+  m_Text: 200G
 --- !u!222 &1561601489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10630,7 +10630,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500G
+  m_Text: 100G
 --- !u!222 &1643119851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10784,7 +10784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500G
+  m_Text: 1000G
 --- !u!222 &1659561813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15144,7 +15144,7 @@ MonoBehaviour:
     healthHeal: 1
     speed: 3
     attackSO: {fileID: 11400000, guid: d4c466801a4ed6b49a886ce24917abc7, type: 2}
-    gold: 1000
+    gold: 300
   goldText: {fileID: 766385090}
   statusModifiers: []
 --- !u!114 &1811828735

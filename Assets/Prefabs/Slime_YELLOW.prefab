@@ -224,9 +224,11 @@ MonoBehaviour:
   baseStatus:
     statusChangeType: 2
     maxHealth: 3
+    currentHealth: 0
+    healthHeal: 0
     speed: 1
     attackSO: {fileID: 11400000, guid: d1253ffa14f6105429b6da624dcec0d5, type: 2}
-    gold: 5
+    gold: 10
   goldText: {fileID: 0}
   statusModifiers: []
 --- !u!114 &420391016200272305
@@ -302,7 +304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
-  healthImg: {fileID: 0}
   playerCheck: 0
 --- !u!114 &-7017592918828726418
 MonoBehaviour:
