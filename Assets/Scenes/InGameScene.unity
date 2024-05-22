@@ -2995,7 +2995,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 541135441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8cbb9c86b196ed40920ebf103ae1d01, type: 3}
+  m_Script: {fileID: 11500000, guid: d4997e857eb2e634289c21f33a9ba708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stageTime: {fileID: 844566143}
@@ -10639,7 +10639,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536029347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78aac59c34493f458c56e59dc318957, type: 3}
+  m_Script: {fileID: 11500000, guid: 746e67543c824d84fbe454ab9c814acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackPowerText: {fileID: 505902768}
@@ -10676,7 +10676,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536029347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c168b018e46bfe341b93b694606661f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fd34b16f162e4a4393bb37b26bac85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicsource: {fileID: 1962632077}
