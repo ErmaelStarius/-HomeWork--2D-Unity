@@ -44,6 +44,11 @@ public class DestroyOnDeath : MonoBehaviour
         }
 
         // 2ÃÊµÚ¿¡ ÆÄ±«
-        Destroy(gameObject, 2f);
+        Invoke("ObjectActiveFalse", 2.0f);
+    }
+
+    void ObjectActiveFalse()
+    {
+        gameObject.SetActive(false);
     }
 }

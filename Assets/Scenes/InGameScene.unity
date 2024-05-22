@@ -1341,11 +1341,11 @@ RectTransform:
   m_Children:
   - {fileID: 1536355872}
   - {fileID: 750455425}
+  - {fileID: 1077626419}
+  - {fileID: 1876720562}
   - {fileID: 3369740897528621385}
   - {fileID: 1055502273}
   - {fileID: 578991530}
-  - {fileID: 1077626419}
-  - {fileID: 1876720562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15496,7 +15496,7 @@ MonoBehaviour:
     healthHeal: 1
     speed: 3
     attackSO: {fileID: 11400000, guid: d4c466801a4ed6b49a886ce24917abc7, type: 2}
-    gold: 300
+    gold: 1000
   goldText: {fileID: 766385090}
   statusModifiers: []
 --- !u!114 &1811828735

@@ -75,8 +75,8 @@ public class StageManager : MonoBehaviour
         entranceTile.gameObject.SetActive(true);
 
         // 게임 시간을 감소
-        sec = 30;
-        min = 1;
+        sec = 10;
+        min = 0;
     }
 
     public void StageClear()
@@ -116,7 +116,7 @@ public class StageManager : MonoBehaviour
 
             // 몬스터 위치를 랜덤 3가지의 몬스터 스포너 위치로 이동
             obj.transform.position = spawnPos[result].transform.position;
-            yield return new WaitForSeconds(spawneTime);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
