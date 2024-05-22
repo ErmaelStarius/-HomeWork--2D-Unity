@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private float healthChangeDelay = .5f;
-    [SerializeField] private Image healthImg;
     public bool playerCheck = false;
 
     private CharacterStatusHandler statsHandler;
@@ -18,8 +17,6 @@ public class HealthSystem : MonoBehaviour
     public event Action OnDeath;
     public event Action OnInvincibilityEnd;
 
-    public float CurrentHealth { get; private set; }
-
     // get만 구현된 것처럼 프로퍼티를 사용하는 것
     // 이렇게 하면 데이터의 복제본이 여기저기 돌아다니다가 싱크가 깨지는 문제를 막을 수 있어요!
     public float MaxHealth => statsHandler.currentStatus.maxHealth;
@@ -29,10 +26,6 @@ public class HealthSystem : MonoBehaviour
         statsHandler = GetComponent<CharacterStatusHandler>();
     }
 
-    private void Start()
-    {
-        CurrentHealth = statsHandler.currentStatus.maxHealth;
-    }
 
     private void Update()
     {
@@ -47,7 +40,7 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public bool ChangeHealth(float change)
+    public bool ChangeHealth(int change)
     {
         // 무적 시간에는 체력이 달지 않음
         if (timeSinceLastChange < healthChangeDelay)
@@ -56,18 +49,13 @@ public class HealthSystem : MonoBehaviour
         }
 
         timeSinceLastChange = 0f;
-        CurrentHealth += change;
+        statsHandler.currentStatus.currentHealth += change;
         // [최솟값을 0, 최댓값을 MaxHealth로 하는 구문]
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+        statsHandler.currentStatus.currentHealth = Mathf.Clamp(statsHandler.currentStatus.currentHealth, 0, statsHandler.currentStatus.maxHealth);
         // CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         // CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth; 와 같아요!
 
-        if (playerCheck)
-        {
-            healthImg.fillAmount = CurrentHealth / statsHandler.currentStatus.maxHealth;
-        }
-
-        if (CurrentHealth <= 0f)
+        if (statsHandler.currentStatus.currentHealth <= 0f)
         {
             if (playerCheck)
             {

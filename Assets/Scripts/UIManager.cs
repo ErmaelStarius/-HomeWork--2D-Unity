@@ -10,14 +10,26 @@ public class UIManager : MonoBehaviour
     public Text projectileSpeedText;
     public Text projectileCountText;
     public Text shopGoldText;
+    public Text playerSpeedText;
+    public Text healthHealText;
+    public Text maxHealthText;
+    public Image healthImg;
 
     [Header("Player Status")]
     public CharacterStatusHandler characterStatusHandler;
-    private int currency; // 화폐 시스템을 위한 변수
 
     private void Start()
     {
         UpdateUpgradeTexts();
+    }
+
+    private void Update()
+    {
+        healthImg.fillAmount = (float)characterStatusHandler.currentStatus.currentHealth / characterStatusHandler.currentStatus.maxHealth;
+        if (attackPowerText.gameObject.activeSelf)
+        {
+            UpdateUpgradeTexts();
+        }
     }
 
     private void UpdateUpgradeTexts()
@@ -29,7 +41,10 @@ public class UIManager : MonoBehaviour
         {
             projectileCountText.text = "투사체 개수: " + characterStatusHandler.currentStatus.attackSO.numberOfProjectilesPerShot.ToString();
         }
-        shopGoldText.text = characterStatusHandler.currentStatus.gold + "G";
+        shopGoldText.text = "현재 골드:  " + characterStatusHandler.currentStatus.gold + "G";
+        playerSpeedText.text = "이동 속도:   " + characterStatusHandler.currentStatus.speed.ToString(); //이동 속도
+        healthHealText.text = "현재 체력:  " + characterStatusHandler.currentStatus.currentHealth.ToString(); //체력회복
+        maxHealthText.text = "최대 체력:  " + characterStatusHandler.currentStatus.maxHealth.ToString();//최대 체력
     }
 
     public void UpgradeAttackPower()
@@ -88,6 +103,43 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void UpgradePlayerSpeed()
+    {
+        if (CanAffordUpgrade(1000)) // 업그레이드 비용
+        {
+            characterStatusHandler.currentStatus.speed += 1; // 이동 속도 증가
+            UpdateUpgradeTexts();
+        }
+        else
+        {
+            Debug.Log("화폐가 부족합니다.");
+        }
+    }
+    public void UpgradeHealthRecovery()
+    {
+        if (CanAffordUpgrade(500)) // 업그레이드 비용
+        {
+            characterStatusHandler.currentStatus.currentHealth += characterStatusHandler.currentStatus.healthHeal; // 체력 회복 증가
+            UpdateUpgradeTexts();
+        }
+        else
+        {
+            Debug.Log("화폐가 부족합니다.");
+        }
+    }
+    public void UpgradeMaxHealth()
+    {
+        if (CanAffordUpgrade(1000)) // 업그레이드 비용
+        {
+            characterStatusHandler.currentStatus.maxHealth += 10; // 최대 체력 증가
+            UpdateUpgradeTexts();
+        }
+        else
+        {
+            Debug.Log("화폐가 부족합니다.");
+        }
+    }
+
     private bool CanAffordUpgrade(int upgradeCost)
     {
         if (characterStatusHandler.currentStatus.gold >= upgradeCost)
@@ -97,4 +149,6 @@ public class UIManager : MonoBehaviour
         }
         return false;
     }
+
+    
 }
